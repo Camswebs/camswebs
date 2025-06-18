@@ -1116,6 +1116,7 @@ footer {
 
 
 
+
 <script>
   (function () {
     emailjs.init("TGBL0hP5wpQszDpKM");
@@ -1124,6 +1125,10 @@ footer {
   document.getElementById("orderForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const f = e.target;
+    const btn = f.querySelector("button");
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
     const data = {
       user_name: f.name.value,
       user_email: f.email.value,
@@ -1133,13 +1138,9 @@ footer {
     };
 
     try {
-      // Send email to customer
       await emailjs.send("service_4h3214j", "template_bce30y1", data);
-
-      // Send email to admin
       await emailjs.send("service_4h3214j", "template_8zo7c5k", data);
 
-      // Send package info to Stripe backend
       const res = await fetch("https://camswebs-stripe-server.onrender.com/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -1151,13 +1152,18 @@ footer {
         window.location.href = session.url;
       } else {
         alert("Stripe checkout failed.");
+        btn.disabled = false;
+        btn.textContent = "Send Request";
       }
     } catch (err) {
       console.error("ERROR:", err);
-      alert("Something went wrong. Please try again. Details in console.");
+      alert("Something went wrong. Please try again.");
+      btn.disabled = false;
+      btn.textContent = "Send Request";
     }
   });
 </script>
+
 
 
 
