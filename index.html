@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>CamsWebs – Get Your Website Built</title>
+<style>
+
+:root {
+  --blue: #d179ff;       /* light purple for accents */
+  --blue-d: #a244e8;     /* darker purple for hover */
+  --g50: #fff5f5;
+  --g200: #ffdbdb;
+  --g700: #5d3a6a;
+  --g800: #3b2c4e;
+  --g900: #2a2038;
+  --white: #ffffff;
+  --black: #000000;
+  --grey-light: #f4e5f8;
+  --grey-mid: #b191c7;
+  --grey-dark: #5a3d69;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: var(--g900);
+  color: var(--grey-light);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--blue);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--blue-d);
+  text-decoration: underline;
+}
+
+/* Header with dark background */
+header {
+  background: var(--g900);
+  color: var(--grey-light);
+  padding: 1rem 1.5rem;
+  box-shadow: none;
+  position: static;
+  top: auto;
+  z-index: auto;
+  transition: background-color 0.3s ease;
+}
+
+header nav a {
+  color: var(--grey-light);
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1.25rem;
+}
+
+section {
+  padding: 5rem 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  J3Z_2101.w026.n002.56B.p1.56.jpg.jpg') center/cover no-repeat;
+  will-change: transform;
+  transition: transform 0.4s ease;
+  text-align: center;
+  padding: 6rem 1rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 900;
+  color: var(--white);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  margin-bottom: 2.5rem;
+  font-size: 1.25rem;
+  color: var(--grey-light);
+}
+
+.btn {
+  background: var(--blue);
+  color: var(--white);
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+  box-shadow: none;
+}
+
+.btn:hover {
+  transition: all 0.4s ease;
+  background: var(--blue-d);
+  box-shadow: none;
+}
+
+/* Header logo and text container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+.logo-container img {
+  height: 40px;
+  width: auto;
+}
+.logo-container h1 {
+  font-size: 1.8rem;
+  color: var(--blue);
+  margin: 0;
+  user-select: none;
+  font-weight: bold;
+}
+
+/* Shooting stars left 40% of #how */
+#how {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--g900) 0%, var(--g700) 100%);
+  box-shadow: none;
+  padding: 4rem 1rem;
+}
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--white);
+  border-radius: 50%;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  animation: shoot 2.5s linear forwards;
+  filter: none;
+}
+@keyframes shoot {
+  from {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-700px, 600px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Flex container for How It Works */
+#how > .container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Steps container */
+.steps-container {
+  max-width: 480px;
+  flex: 1 1 480px;
+}
+
+/* Ordered list styles */
+ol.steps {
+  list-style: decimal inside;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--grey-light);
+}
+
+/* Video container */
+#how video {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  flex: 1 1 420px;
+}
+
+/* Pricing cards styling */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  will-change: transform;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  background: var(--g800);
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  flex: 1 1 320px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.card:hover {
+  transform: perspective(1000px) rotateY(10deg) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+.card h4 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--white);
+  font-weight: 700;
+}
+.card ul {
+  margin-left: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--grey-light);
+}
+.card p.price {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-top: 1rem;
+  color: var(--blue);
+}
+
+/* Order form improvements */
+.order-card {
+  background: var(--g800);
+  padding: 4rem 3rem;
+  margin-top: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.order-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--grey-light);
+}
+.order-card input,
+.order-card textarea,
+.order-card select {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--g700);
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  transition: outline-color 0.3s ease;
+  box-shadow: none;
+}
+.order-card input:focus,
+.order-card textarea:focus,
+.order-card select:focus {
+  outline: 2px solid var(--blue-d);
+  background: var(--g900);
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+.order-card textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.order-card button.btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 30px;
+  box-shadow: none;
+}
+
+/* Contact section */
+#contact {
+  background: var(--g800);
+  border-radius: 15px;
+  padding: 4rem 1rem;
+  box-shadow: none;
+}
+#contact p {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  color: var(--grey-light);
+}
+#contact a {
+  font-weight: 700;
+  color: var(--blue);
+}
+#contact a:hover {
+  color: var(--blue-d);
+  text-decoration: underline;
+}
+#contact ul {
+  list-style: none;
+  color: var(--grey-light);
+  font-size: 1rem;
+  margin-top: 1rem;
+  line-height: 1.8;
+}
+
+
+.floater {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(37, 99, 235, 0.2);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes float {
+  from { transform: translateY(0px) rotate(0deg); }
+  to { transform: translateY(-30px) rotate(20deg); }
+}
+
+
+/* Footer */
+footer {
+  background: var(--g900);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--g700);
+  color: var(--grey-mid);
+  user-select: none;
+}
+
+/* MOBILE-FRIENDLY ENHANCEMENTS */
+@media (max-width: 720px) {
+  header {
+    padding: 1rem;
+  }
+  .container {
+    flex-wrap: wrap;
+  }
+  .logo-container {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+  header nav {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  header nav a {
+    margin-left: 0;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+
+  #how > .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .steps-container, #how video {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .steps-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+  will-change: transform;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+    flex: 1 1 100%;
+    max-width: 350px;
+  }
+
+  #order .container {
+    max-width: 100% !important;
+    padding: 0 1rem;
+  }
+  .order-card {
+  background: var(--g800);
+  padding: 4rem 3rem;
+  margin-top: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+  footer {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+<style>
+  #header-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .header-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fallStar 2s linear forwards;
+  }
+  @keyframes fallStar {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-300px, 300px); opacity: 0; }
+  }
+
+<style>
+  #pricing-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .pricing-star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.9;
+    animation: fallPricingStar 2.5s linear forwards;
+  }
+  @keyframes fallPricingStar {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-400px, 400px); opacity: 0; }
+  }
+
+<style>
+  #order-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .order-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fallOrderStar 3s linear forwards;
+  }
+  @keyframes fallOrderStar {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-300px, 400px); opacity: 0; }
+  }
+  #order {
+    position: relative;
+    z-index: 1;
+  }
+  #order .container {
+    position: relative;
+    z-index: 2;
+  }
+
+<style>
+  #global-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .global-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: globalFall 4s linear forwards;
+  }
+  @keyframes globalFall {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-500px, 800px); opacity: 0; }
+  }
+  body > *:not(#global-stars) {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+</style>
+
+
+<style>
+  #global-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .global-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: globalFall 4s linear forwards;
+  }
+  @keyframes globalFall {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-500px, 800px); opacity: 0; }
+  }
+  body > *:not(#global-stars) {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+</style>
+
+
+<style>
+  #order-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .order-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fallOrderStar 3s linear forwards;
+  }
+  @keyframes fallOrderStar {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-300px, 400px); opacity: 0; }
+  }
+  #order {
+    position: relative;
+    z-index: 1;
+  }
+  #order .container {
+    position: relative;
+    z-index: 2;
+  }
+
+<style>
+  #global-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .global-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: globalFall 4s linear forwards;
+  }
+  @keyframes globalFall {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-500px, 800px); opacity: 0; }
+  }
+  body > *:not(#global-stars) {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+</style>
+
+
+<style>
+  #global-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .global-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: globalFall 4s linear forwards;
+  }
+  @keyframes globalFall {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-500px, 800px); opacity: 0; }
+  }
+  body > *:not(#global-stars) {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+</style>
+
+
+<style>
+  #pricing-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .pricing-star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.9;
+    animation: fallPricingStar 2.5s linear forwards;
+  }
+  @keyframes fallPricingStar {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-400px, 400px); opacity: 0; }
+  }
+
+<style>
+  #order-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .order-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fallOrderStar 3s linear forwards;
+  }
+  @keyframes fallOrderStar {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-300px, 400px); opacity: 0; }
+  }
+  #order {
+    position: relative;
+    z-index: 1;
+  }
+  #order .container {
+    position: relative;
+    z-index: 2;
+  }
+
+<style>
+  #global-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .global-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: globalFall 4s linear forwards;
+  }
+  @keyframes globalFall {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-500px, 800px); opacity: 0; }
+  }
+  body > *:not(#global-stars) {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+</style>
+
+
+<style>
+  #global-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .global-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: globalFall 4s linear forwards;
+  }
+  @keyframes globalFall {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-500px, 800px); opacity: 0; }
+  }
+  body > *:not(#global-stars) {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+</style>
+
+
+<style>
+  #order-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .order-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fallOrderStar 3s linear forwards;
+  }
+  @keyframes fallOrderStar {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-300px, 400px); opacity: 0; }
+  }
+  #order {
+    position: relative;
+    z-index: 1;
+  }
+  #order .container {
+    position: relative;
+    z-index: 2;
+  }
+
+<style>
+  #global-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .global-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: globalFall 4s linear forwards;
+  }
+  @keyframes globalFall {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-500px, 800px); opacity: 0; }
+  }
+  body > *:not(#global-stars) {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+</style>
+
+
+<style>
+  #global-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .global-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: globalFall 4s linear forwards;
+  }
+  @keyframes globalFall {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-500px, 800px); opacity: 0; }
+  }
+  body > *:not(#global-stars) {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+</style>
+
+<style>
+.hero {
+  background: rgba(0, 0, 0, 0.4) url('123Z_2101.w026.n002.56B.p1.56.jpg') center/cover no-repeat !important;
+  background-attachment: scroll !important;
+}
+</style>
+
+</head>
+<body onscroll="parallaxScroll()">
+<header>
+<div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+<div class="logo-container">
+<img alt="CamsWebs Logo" src="logo_transparent.png"/>
+<h1>CamsWebs</h1>
+</div>
+<nav>
+<a href="#how">How It Works</a>
+<a href="#pricing">Pricing</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact &amp; Info</a>
+</nav>
+</div>
+</header>
+<!-- HERO -->
+<section class="hero">
+<div class="floater" style="top: 50px; left: 80px;"></div>
+<div class="floater" style="top: 150px; right: 100px;"></div>
+<div class="container">
+<h2>Get a Custom Website Built &amp; Published</h2>
+<p style="margin-bottom:2rem;">From concept to launch — <strong>We handle it all for you.</strong></p>
+<a class="btn" href="#order">Start Your Website</a>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section id="how">
+<div class="container">
+<div class="steps-container">
+<h3 class="section-title">How It Works</h3>
+<ol class="steps">
+<li>Pick your package and fill in our quick order form.</li>
+<li>We design and build your custom-made website.</li>
+<li>Preview your site and request any tweaks.</li>
+<li>We launch it on your domain and send you the live link.</li>
+</ol>
+</div>
+<video controls="" id="promoVideo" poster="camswebs_clean_thumbnail.png" preload="none">
+<source src="Effortless_Website_Creation_with_CamsWebs.mp4" type="video/mp4"/>
+      Your browser does not support the video tag.
+    </video>
+</div>
+</section>
+<!-- PACKAGES -->
+<section id="pricing" style="background:var(--g800);">
+<h3 class="section-title">Packages</h3>
+<div class="container cards">
+<div class="card">
+<h4>Starter</h4>
+<ul>
+<li>Single-page scrolling website with essential sections: Home, About, and Contact.</li>
+<li>Custom colour scheme and your unique logo for branding.</li>
+<li>Fully mobile-optimised for smooth viewing on phones and tablets.</li>
+<li><strong>Perfect for small businesses or personal projects.</strong></li>
+</ul>
+<p class="price">£89.99</p>
+</div>
+<div class="card">
+<h4>Pro</h4>
+<ul>
+<li>Includes everything from the Starter package.</li>
+<li>Up to 5 pages such as Home, Services, Gallery, and more.</li>
+<li>Interactive contact form to easily collect inquiries.</li>
+<li>Basic SEO setup to help your site rank on search engines.</li>
+<li>One revision included to tweak your site after preview.</li>
+<li><strong>Great for growing businesses needing more pages and features.</strong></li>
+</ul>
+<p class="price">£149.99</p>
+</div>
+<div class="card">
+<h4>Business+</h4>
+<ul>
+<li>All features of the Pro package.</li>
+<li>Unlimited pages plus an editable blog for ongoing updates.</li>
+<li>Optional shop or booking system integrated for online sales or appointments.</li>
+<li>Comprehensive SEO to boost your online visibility.</li>
+<li>One month of support included for any changes or help.</li>
+<li><strong>Ideal for established businesses looking for a full-featured website.</strong></li>
+</ul>
+<p class="price">£249.99</p>
+</div>
+</div>
+</section>
+<!-- ORDER FORM -->
+<section id="order">
+<h3 class="section-title">Start Your Project</h3>
+<div class="container" style="max-width:700px; padding: 0 1rem 5rem;">
+<div class="order-card">
+<form id="orderForm">
+<label for="name">Full Name</label>
+<input id="name" name="name" placeholder="Enter your name" required="" type="text"/>
+<label for="email">Email Address</label>
+<input id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+<label for="business">Business / Brand Name</label>
+<input id="business" name="business" placeholder="Your business name" required="" type="text"/>
+<label for="details">Project Details</label>
+<textarea id="details" name="details" placeholder="Tell us about your website..." required="" rows="4"></textarea>
+<label for="package">Choose a Package</label>
+<select id="package" name="package" required="">
+<option disabled="" selected="" value="">Select Package</option>
+<option value="Starter">Starter – £89.99</option>
+<option value="Pro">Pro – £149.99</option>
+<option value="Business+">Business+ – £249.99</option>
+</select>
+<button class="btn" style="width:100%; margin-top:0.5rem;" type="submit">Send Request</button>
+</form>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+<!-- EXTRAS -->
+<section id="extras" style="background: var(--g800); padding: 2rem 1rem;">
+  <div class="container" style="max-width: 700px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="logo_transparent.png" alt="CamsWebs Logo" style="height: 70px; margin-bottom: 0.5rem;">
+    <h3 class="section-title" style="margin-bottom: 0.8rem; font-size: 1.4rem;">Why Choose Us?</h3>
+    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
+      At <strong>CamsWebs</strong>, we don’t just build websites — we build your online presence. We’re committed to helping small businesses, entrepreneurs, and creators launch powerful websites without breaking the bank.
+    </p>
+    <ul style="list-style: none; font-size: 0.95rem; color: var(--grey-light); line-height: 1.7; padding-left: 0;">
+      <li>✅ <strong>Super-Fast Delivery:</strong> Most websites are completed and ready in just 2–5 days.</li>
+      <li>✅ <strong>Fully Responsive:</strong> Mobile and tablet-friendly design included as standard.</li>
+      <li>✅ <strong>SEO-Optimised:</strong> Your website will be built with search engines in mind to help you get discovered.</li>
+      <li>✅ <strong>Continued Support:</strong> We stay available for help and updates even after your site goes live.</li>
+      <li>✅ <strong>Unbeatable Prices:</strong> Get professional quality at a fraction of the cost — starting at just £89.99.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: var(--g800); padding: 2rem 1rem;">
+  <h3 class="section-title" style="font-size: 1.5rem;">Contact &amp; Information</h3>
+  <div class="container" style="max-width:600px; text-align:center;">
+    <p style="margin-bottom:1rem; font-size: 1rem;">
+      Need help? Email us at
+      <a href="mailto:CamsWebs122@gmail.com">CamsWebs122@gmail.com</a>
+    </p>
+    <ul style="list-style:none; font-size: 0.95rem; line-height: 1.6; padding: 0;">
+      <li><strong>Timeline:</strong> 2–5 days depending on package.</li>
+      <li><strong>Domain &amp; hosting:</strong> We can handle everything.</li>
+      <li><strong>Edits:</strong> Basic edits are free after delivery.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>© 2025 CamsWebs. All rights reserved.</footer>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+
+
+<script>
+  (function () {
+    emailjs.init("TGBL0hP5wpQszDpKM");
+  })();
+
+  document.getElementById("orderForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const f = e.target;
+    const data = {
+      user_name: f.name.value,
+      user_email: f.email.value,
+      user_package: f.package.value,
+      message: f.details.value,
+      time: new Date().toLocaleString()
+    };
+
+    try {
+      // Send email to customer
+      await emailjs.send("service_4h3214j", "template_bce30y1", data);
+
+      // Send email to admin
+      await emailjs.send("service_4h3214j", "template_8zo7c5k", data);
+
+      // Send package info to Stripe backend
+      const res = await fetch("https://camswebs-stripe-server.onrender.com/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ package: data.user_package }),
+      });
+
+      const session = await res.json();
+      if (session.url) {
+        window.location.href = session.url;
+      } else {
+        alert("Stripe checkout failed.");
+      }
+    } catch (err) {
+      console.error("ERROR:", err);
+      alert("Something went wrong. Please try again. Details in console.");
+    }
+  });
+</script>
+
+
+
+
+
+<script>
+  // Fix for anchor links disappearing on mobile
+  window.addEventListener('load', () => {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+    }
+  });
+</script>
+
+
+<script>
+  const header = document.querySelector('header');
+  const starContainer = document.createElement('div');
+  starContainer.id = "header-stars";
+  header.style.position = "relative";
+  header.appendChild(starContainer);
+
+  setInterval(() => {
+    const star = document.createElement('div');
+    star.className = 'header-star';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.top = Math.random() * 30 + 'px';
+    starContainer.appendChild(star);
+    star.addEventListener('animationend', () => star.remove());
+  }, 400);
+</script>
+
+
+<script>
+  const pricingSection = document.querySelector('#pricing');
+  const pricingStars = document.createElement('div');
+  pricingStars.id = 'pricing-stars';
+  pricingSection.style.position = 'relative';
+  pricingSection.appendChild(pricingStars);
+
+  setInterval(() => {
+    const star = document.createElement('div');
+    star.className = 'pricing-star';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.top = Math.random() * 50 + 'px';
+    pricingStars.appendChild(star);
+    star.addEventListener('animationend', () => star.remove());
+  }, 500);
+</script>
+
+
+<script>
+  const orderSection = document.querySelector('#order');
+  const orderStars = document.createElement('div');
+  orderStars.id = 'order-stars';
+  orderSection.appendChild(orderStars);
+
+  setInterval(() => {
+    const star = document.createElement('div');
+    star.className = 'order-star';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.top = Math.random() * 50 + 'px';
+    orderStars.appendChild(star);
+    star.addEventListener('animationend', () => star.remove());
+  }, 600);
+</script>
+
+
+<script>
+  const globalStars = document.createElement('div');
+  globalStars.id = 'global-stars';
+  document.body.prepend(globalStars);
+
+  setInterval(() => {
+    const star = document.createElement('div');
+    star.className = 'global-star';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.top = Math.random() * 40 + 'px';
+    globalStars.appendChild(star);
+    star.addEventListener('animationend', () => star.remove());
+  }, 350);
+</script>
+
+
+
+
+</body>
+</html>
