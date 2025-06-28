@@ -607,6 +607,13 @@ footer {
     margin-right: 0.5rem;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
+
+/* Disable animations/transitions on the Start Your Website button */
+.hero .btn {
+  animation: none !important;
+  transition: none !important;
+}
+
 </style>
 
 </style>
@@ -1004,22 +1011,12 @@ footer {
 }
 </style>
 
-<style>
-@media (max-width: 720px) {
-  header nav.open {
-    display: flex !important;
-    pointer-events: auto;
-    z-index: 1001;
-  }
-}
-</style>
 </head>
 <body onscroll="parallaxScroll()">
 
 
 
 <header>
-<style>header { position: relative; z-index: 1000; }</style>
 <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
 <div class="logo-container">
   <h1>CamsWebs</h1>
