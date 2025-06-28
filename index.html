@@ -607,59 +607,6 @@ footer {
     margin-right: 0.5rem;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* Mobile-friendly enhancements */
-  /* Hide nav by default on small screens */
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--grey-light);
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  header nav {
-    display: flex;
-    gap: 1rem;
-  }
-  @media (max-width: 720px) {
-    .menu-toggle {
-      display: block;
-    }
-    header nav {
-      display: none;
-      flex-direction: column;
-      background: var(--g900);
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    header nav a {
-      margin: 0.5rem 0;
-      font-size: 1.2rem;
-    }
-    header nav.open {
-      display: flex;
-    }
-    .hero {
-      padding: 4rem 1rem;
-    }
-    .hero h2 {
-      font-size: 2rem;
-    }
-    .hero p {
-      font-size: 1rem;
-    }
-    .cards {
-      flex-direction: column;
-    }
-    .order-card {
-      padding: 2rem 1.5rem;
-    }
-  }
 </style>
 
 </style>
@@ -1057,17 +1004,26 @@ footer {
 }
 </style>
 
+<style>
+@media (max-width: 720px) {
+  header nav.open {
+    display: flex !important;
+    pointer-events: auto;
+    z-index: 1001;
+  }
+}
+</style>
 </head>
 <body onscroll="parallaxScroll()">
 
 
 
 <header>
+<style>header { position: relative; z-index: 1000; }</style>
 <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
 <div class="logo-container">
   <h1>CamsWebs</h1>
 </div>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
 <nav>
 <a href="#how">How It Works</a>
 <a href="#pricing">Pricing</a>
@@ -1363,14 +1319,6 @@ footer {
       btn.style.pointerEvents = "";
       isSubmitting = false;
     }
-  });
-</script>
-
-
-<script>
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    const nav = document.querySelector('header nav');
-    nav.classList.toggle('open');
   });
 </script>
 
