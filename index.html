@@ -593,6 +593,73 @@ footer {
     position: relative;
     z-index: 2;
   }
+
+  /* Spinner inside button */
+  .button-spinner {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Mobile-friendly enhancements */
+  /* Hide nav by default on small screens */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--grey-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  header nav {
+    display: flex;
+    gap: 1rem;
+  }
+  @media (max-width: 720px) {
+    .menu-toggle {
+      display: block;
+    }
+    header nav {
+      display: none;
+      flex-direction: column;
+      background: var(--g900);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    header nav a {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+    header nav.open {
+      display: flex;
+    }
+    .hero {
+      padding: 4rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    .cards {
+      flex-direction: column;
+    }
+    .order-card {
+      padding: 2rem 1.5rem;
+    }
+  }
 </style>
 
 </style>
@@ -959,13 +1026,48 @@ footer {
 }
 </style>
 
+
+<style>
+#loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(24, 24, 36, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+  color: #fff;
+  font-size: 1.5rem;
+}
+#loadingOverlay .spinner {
+  border: 8px solid rgba(255,255,255,0.2);
+  border-top: 8px solid #d179ff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+</style>
+
 </head>
 <body onscroll="parallaxScroll()">
+
+
+
 <header>
 <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
 <div class="logo-container">
   <h1>CamsWebs</h1>
 </div>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
 <nav>
 <a href="#how">How It Works</a>
 <a href="#pricing">Pricing</a>
@@ -1109,6 +1211,14 @@ footer {
   </div>
 </section>
 
+<section style="background: var(--g800); padding: 2rem 1rem;">
+  <div class="container" style="max-width: 700px; text-align: center;">
+    <h3 class="section-title" style="margin-bottom: 1rem;">About CamsWebs</h3>
+    <p style="font-size: 1.05rem; line-height: 1.7; color: var(--grey-light);">
+      At <strong>CamsWebs</strong>, we’re passionate about building affordable, fast, and mobile-friendly websites for individuals, small businesses, and entrepreneurs. Whether you need a single-page site, an online store, or a full business presence, we’ve got you covered with modern design, easy navigation, and SEO optimization to help you grow online.
+    </p>
+  </div>
+</section>
 <footer>© 2025 CamsWebs. All rights reserved.</footer>
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -1117,52 +1227,7 @@ footer {
 
 
 
-<script>
-  (function () {
-    emailjs.init("TGBL0hP5wpQszDpKM");
-  })();
 
-  document.getElementById("orderForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const f = e.target;
-    const btn = f.querySelector("button");
-    btn.disabled = true;
-    btn.textContent = "Sending...";
-
-    const data = {
-      user_name: f.name.value,
-      user_email: f.email.value,
-      user_package: f.package.value,
-      message: f.details.value,
-      time: new Date().toLocaleString()
-    };
-
-    try {
-      await emailjs.send("service_4h3214j", "template_bce30y1", data);
-      await emailjs.send("service_4h3214j", "template_8zo7c5k", data);
-
-      const res = await fetch("https://camswebs-stripe-server.onrender.com/create-checkout-session", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ package: data.user_package }),
-      });
-
-      const session = await res.json();
-      if (session.url) {
-        window.location.href = session.url;
-      } else {
-        alert("Stripe checkout failed.");
-        btn.disabled = false;
-        btn.textContent = "Send Request";
-      }
-    } catch (err) {
-      console.error("ERROR:", err);
-      alert("Something went wrong. Please try again.");
-      btn.disabled = false;
-      btn.textContent = "Send Request";
-    }
-  });
-</script>
 
 
 
@@ -1251,14 +1316,63 @@ footer {
     star.addEventListener('animationend', () => star.remove());
   }, 350);
 </script>
-<section style="background: var(--g800); padding: 2rem 1rem;">
-  <div class="container" style="max-width: 700px; text-align: center;">
-    <h3 class="section-title" style="margin-bottom: 1rem;">About CamsWebs</h3>
-    <p style="font-size: 1.05rem; line-height: 1.7; color: var(--grey-light);">
-      At <strong>CamsWebs</strong>, we’re passionate about building affordable, fast, and mobile-friendly websites for individuals, small businesses, and entrepreneurs. Whether you need a single-page site, an online store, or a full business presence, we’ve got you covered with modern design, easy navigation, and SEO optimization to help you grow online.
-    </p>
-  </div>
-</section>
+
+
+
+<script>
+  (function () {
+    emailjs.init("TGBL0hP5wpQszDpKM");
+  })();
+  let isSubmitting = false;
+  document.getElementById("orderForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    if (isSubmitting) return;
+    isSubmitting = true;
+    const form = e.target;
+    const btn = form.querySelector("button.btn");
+    btn.innerHTML = '<span class="button-spinner"></span><span>Please wait while we direct you to the payment page...</span>';
+    btn.disabled = true;
+    btn.style.pointerEvents = "none";
+    const data = {
+      user_name: form.name.value,
+      user_email: form.email.value,
+      user_business: form.business.value,
+      user_package: form.package.value,
+      message: form.details.value,
+      time: new Date().toLocaleString()
+    };
+    try {
+      await emailjs.send("service_4h3214j","template_bce30y1",data);
+      await emailjs.send("service_4h3214j","template_8zo7c5k",data);
+      const res = await fetch("https://camswebs-stripe-server.onrender.com/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ package: data.user_package })
+      });
+      const session = await res.json();
+      if (session.url) {
+        window.location.href = session.url;
+      } else {
+        throw new Error("Missing session URL");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong. Please try again.");
+      btn.innerHTML = 'Send Request';
+      btn.disabled = false;
+      btn.style.pointerEvents = "";
+      isSubmitting = false;
+    }
+  });
+</script>
+
+
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    const nav = document.querySelector('header nav');
+    nav.classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
